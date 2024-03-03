@@ -1,0 +1,70 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/halima/Desktop/Lab/EMG_website/EMG_website.csproj": {}
+  },
+  "projects": {
+    "/Users/halima/Desktop/Lab/EMG_website/EMG_website.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/halima/Desktop/Lab/EMG_website/EMG_website.csproj",
+        "projectName": "EMG_website",
+        "projectPath": "/Users/halima/Desktop/Lab/EMG_website/EMG_website.csproj",
+        "packagesPath": "/Users/halima/.nuget/packages/",
+        "outputPath": "/Users/halima/Desktop/Lab/EMG_website/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/halima/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "supabase-csharp": {
+              "target": "Package",
+              "version": "[0.15.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.100/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

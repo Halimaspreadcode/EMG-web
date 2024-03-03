@@ -1,0 +1,112 @@
+﻿@model IEnumerable<EMG_website.Models.Voiture>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+
+        .header-banner {
+    background-image: url('https://www.emguniversalauto.sn/wp-content/uploads/2017/09/IMG_3870.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    text-align: center;
+    padding: 150px 0;
+    margin-bottom: 50px; /* Espace avant le contenu principal */
+}
+
+.container h2 {
+    color: #333;
+    margin-bottom: 30px; /* Espace avant les cartes */
+}
+
+.footer-space {
+    padding: 50px 0; /* Espace pour le futur footer */
+}
+        .card {
+            border-radius: 15px;
+            overflow: hidden;
+            transition: transform .2s; /* Animation */
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        }
+        .card:hover {
+            transform: scale(1.05); /* Zoom légèrement */
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+        }
+        .card-img-top {
+            height: 200px; /* Fixer la hauteur de l'image */
+            object-fit: cover; /* Assure que l'image couvre bien la zone */
+        }
+        .card-body {
+            padding: 20px; /* Espace interne plus grand */
+        }
+        .card-title {
+            font-size: 1.2em; /* Titre plus grand */
+            margin-bottom: 15px; /* Espace après le titre */
+        }
+        .card-text {
+            font-size: 0.9em; /* Texte plus petit pour plus de contenu */
+            margin-bottom: 15px; /* Espace avant le bouton */
+        }
+        .btn-primary {
+            background-color: #007bff; /* Couleur de fond */
+            border: none; /* Pas de bordure */
+            padding: 10px 20px; /* Padding plus grand */
+        }
+    </style>
+</head>
+<body>
+
+<div class="header-banner">
+    <h1 style="color: white;">Explorez Notre Collection de Voitures</h1>
+    <p style="color: white;">Découvrez les meilleures offres sur nos voitures</p>
+</div>
+
+<div class="container mt-5">
+    <h2>@ViewData["Title"]</h2>
+        @if (Model.Any())
+        {
+                <div class="row">
+                @foreach (var voiture in Model)
+                {
+                            <div class="col-md-4 mb-4">
+                                <div class="card">
+                                    <img src="@($"https://source.unsplash.com/random/800x600?car={DateTime.Now.Ticks}")" class="card-img-top" alt="Image de @voiture.Marque @voiture.Modele">
+                                    <div class="card-body">
+                                        <h5 class="card-title">@voiture.Marque @voiture.Modele</h5>
+                                        <p class="card-text">
+                                            Année: @voiture.Annee <br>
+                                            Description: @voiture.Description <br>
+                                            Est vendue: @(voiture.EstVendue ? "Oui" : "Non") <br>
+                                            Finition: @voiture.Finition <br>
+                                            Date d'achat: @voiture.DateAchat?.ToString("d") <br>
+                                            Prix d'achat: @voiture.PrixAchat <br>
+                                            Réparation: @voiture.Reparation <br>
+                                            Prix de réparation: @voiture.PrixReparation
+                                        </p>
+                                        <a 
+                                        @* href to login page *@
+                                            href="login"
+                                         class="btn btn-primary">Voir détails</a>
+                                    </div>
+                                </div>
+                            </div>
+                }
+                </div>
+        }
+        else
+        {
+                <div class="alert alert-info">Aucune voiture disponible pour le moment.</div>
+        }
+</div>
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
